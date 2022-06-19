@@ -1,0 +1,11 @@
+dist: jammy
+group: dev
+arch:
+  - amd64
+  - arm64
+addons:
+  mariadb: '10.6'
+before_script:
+  - sleep 10
+script:
+  - mysql -e 'SHOW GLOBAL STATUS LIKE '%Connection_errors%'; '
